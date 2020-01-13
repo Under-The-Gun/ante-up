@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('./lib/utils/connect')();
+require('./lib/utils/connect')(process.env.MONGODB_URI);
 
 const app = require('./lib/app');
 
