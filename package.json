@@ -1,5 +1,5 @@
 {
-  "name": "ante-up",
+  "name": "A",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -29,6 +29,6 @@
     "express": "^4.17.1",
     "inquirer": "^7.0.3",
     "mongoose": "^5.8.7",
-    "socket.io": "^2.3.0"
+    "socketio": "^1.0.0"
   }
 }
