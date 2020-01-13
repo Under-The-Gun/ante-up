@@ -1,5 +1,5 @@
 
-const LoginInput = [
+const loginInput = [
   {
     type: 'input',
     name: 'Username',
@@ -26,4 +26,4 @@ const LoginInput = [
   }
 ]
     ;
-module.exports = LoginInput;
+module.exports = loginInput;
