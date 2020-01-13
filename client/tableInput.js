@@ -1,13 +1,14 @@
 
-const turnOptions = [
+const turnInputs = [
   {
     type: 'list',
     name: 'turn-choice',
-    message: 'It\'s your turn, choose from the following options.',
+    message: 'It\'s your turn, choose from the following Inputs.',
     choices: ['call', 'raise', 'check', 'fold', 'table status']
   }
 ];
-const outOfTurnOptions = [
+
+const outOfTurnInputs = [
   {
     type: 'list',
     name: 'out-of-turn-choice',
@@ -16,6 +17,16 @@ const outOfTurnOptions = [
   }
 ];
 
+const startHandInputs = [
+  {
+    type: 'list',
+    name: 'start-hand',
+    message: 'You may choose from the following.',
+    choices: ['deal hands', 'chat', 'leave table']
+  }
+];
 
-module.exports = { turnOptions, outOfTurnOptions }
+
+
+module.exports = { turnInputs, outOfTurnInputs, startHandInputs  }
 ;
