@@ -1,7 +1,7 @@
 const signUpInput = [
   {
     type: 'input',
-    name: 'Username',
+    name: 'username',
     message: 'Please enter username.',
     validate: username => {
       if(username.length !== 0) {
