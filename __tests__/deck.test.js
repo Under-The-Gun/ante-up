@@ -51,7 +51,7 @@ describe('deck methods', () => {
       },
       {
         'suit': 'DIAMONDS',
-        'value': '10',
+        'value': 'T',
         'code': 'Td'
       },
       {
@@ -71,8 +71,8 @@ describe('deck methods', () => {
       },
       {
         'suit': 'CLUBS',
-        'value': '10',
-        'code': '10c'
+        'value': 'T',
+        'code': 'Tc'
       },
       {
         'suit': 'DIAMONDS',
@@ -121,7 +121,7 @@ describe('deck methods', () => {
       },
       {
         'suit': 'SPADES',
-        'value': '10',
+        'value': 'T',
         'code': 'Ts'
       },
       {
@@ -161,8 +161,8 @@ describe('deck methods', () => {
       },
       {
         'suit': 'HEARTS',
-        'value': '10',
-        'code': '10h'
+        'value': 'T',
+        'code': 'Th'
       },
       {
         'suit': 'SPADES',
@@ -340,7 +340,7 @@ describe('deck methods', () => {
       {
         'suit': 'CLUBS',
         'value': '10',
-        'code': '10c'
+        'code': 'Tc'
       },
       {
         'suit': 'DIAMONDS',
@@ -430,7 +430,7 @@ describe('deck methods', () => {
       {
         'suit': 'HEARTS',
         'value': '10',
-        'code': '10h'
+        'code': 'Th'
       },
       {
         'suit': 'SPADES',
