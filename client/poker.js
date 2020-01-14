@@ -10,12 +10,11 @@ socket.on('disconnect', function() {
 });
 socket.on('connect', () => {
   console.log('You\'re connected', socket.id);
-  firstHandPrompt()
-    .then(userChoice => {
-      socket.emit('userChoice', userChoice);
-      playerTurnPrompt();
-    });
+  firstHandPrompt().then(answer => {
+    socket.emit('your-hold-cards', { answer });
+  });
+    
 });
-socket.on('deal-hands', (data) => {
+socket.on('your-hold-cards', (data) => {
   console.log('recieved cards', data);
 });
