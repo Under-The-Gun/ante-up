@@ -5,11 +5,11 @@ socket.on('disconnect', function() {
 });
 socket.on('connect', () => {
   console.log('You\'re connected', socket.id);
-  loginPrompt()
-    .then(userInfo => {
-      socket.emit('log-in', userInfo);
-    });
+  firstHandPrompt().then(answer => {
+    socket.emit('your-hold-cards', { answer });
+  });
+    
 });
-socket.on('deal-hands', (data) => {
+socket.on('your-hold-cards', (data) => {
   console.log('recieved cards', data);
 });
