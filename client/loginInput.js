@@ -3,7 +3,7 @@ const loginInput = [
   {
     type: 'input',
     name: 'username',
-    message: 'Please enter username.',
+    message: 'Please enter Username.',
     validate: username => {
       if(username.length !== 0) {
         return true;
