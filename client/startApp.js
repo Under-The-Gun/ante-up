@@ -29,4 +29,5 @@ const pokerApp = () => {
       console.log('error:', err);
     });
 };
+pokerApp();
 module.exports = { pokerApp };
