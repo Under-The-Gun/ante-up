@@ -7,262 +7,262 @@ describe('deck methods', () => {
       {
         'suit': 'DIAMONDS',
         'value': '6',
-        'code': '6D'
+        'code': '6d'
       },
       {
         'suit': 'CLUBS',
         'value': 'QUEEN',
-        'code': 'QC'
+        'code': 'Qc'
       },
       {
         'suit': 'CLUBS',
         'value': '6',
-        'code': '6C'
+        'code': '6c'
       },
       {
         'suit': 'SPADES',
         'value': '5',
-        'code': '5S'
+        'code': '5s'
       },
       {
         'suit': 'SPADES',
         'value': 'QUEEN',
-        'code': 'QS'
+        'code': 'Qs'
       },
       {
         'suit': 'CLUBS',
         'value': 'KING',
-        'code': 'KC'
+        'code': 'Kc'
       },
       {
         'suit': 'CLUBS',
         'value': '5',
-        'code': '5C'
+        'code': '5c'
       },
       {
         'suit': 'HEARTS',
         'value': 'JACK',
-        'code': 'JH'
+        'code': 'Jh'
       },
       {
         'suit': 'SPADES',
         'value': 'ACE',
-        'code': 'AS'
+        'code': 'As'
       },
       {
         'suit': 'DIAMONDS',
-        'value': '10',
-        'code': '10D'
+        'value': 'T',
+        'code': 'Td'
       },
       {
         'suit': 'SPADES',
         'value': '3',
-        'code': '3S'
+        'code': '3s'
       },
       {
         'suit': 'DIAMONDS',
         'value': '3',
-        'code': '3D'
+        'code': '3d'
       },
       {
         'suit': 'DIAMONDS',
         'value': '2',
-        'code': '2D'
+        'code': '2d'
       },
       {
         'suit': 'CLUBS',
-        'value': '10',
-        'code': '10C'
+        'value': 'T',
+        'code': 'Tc'
       },
       {
         'suit': 'DIAMONDS',
         'value': '7',
-        'code': '7D'
+        'code': '7d'
       },
       {
         'suit': 'DIAMONDS',
         'value': '4',
-        'code': '4D'
+        'code': '4d'
       },
       {
         'suit': 'HEARTS',
         'value': '9',
-        'code': '9H'
+        'code': '9h'
       },
       {
         'suit': 'HEARTS',
         'value': '7',
-        'code': '7H'
+        'code': '7h'
       },
       {
         'suit': 'HEARTS',
         'value': '6',
-        'code': '6H'
+        'code': '6h'
       },
       {
         'suit': 'HEARTS',
         'value': 'QUEEN',
-        'code': 'QH'
+        'code': 'Qh'
       },
       {
         'suit': 'CLUBS',
         'value': 'ACE',
-        'code': 'AC'
+        'code': 'Ac'
       },
       {
         'suit': 'DIAMONDS',
         'value': 'ACE',
-        'code': 'AD'
+        'code': 'Ad'
       },
       {
         'suit': 'HEARTS',
         'value': 'ACE',
-        'code': 'AH'
+        'code': 'Ah'
       },
       {
         'suit': 'SPADES',
-        'value': '10',
-        'code': '10S'
+        'value': 'T',
+        'code': 'Ts'
       },
       {
         'suit': 'CLUBS',
         'value': '2',
-        'code': '2C'
+        'code': '2c'
       },
       {
         'suit': 'HEARTS',
         'value': '5',
-        'code': '5H'
+        'code': '5h'
       },
       {
         'suit': 'SPADES',
         'value': '2',
-        'code': '2S'
+        'code': '2s'
       },
       {
         'suit': 'CLUBS',
         'value': '4',
-        'code': '4C'
+        'code': '4c'
       },
       {
         'suit': 'DIAMONDS',
         'value': '8',
-        'code': '8D'
+        'code': '8d'
       },
       {
         'suit': 'DIAMONDS',
         'value': 'KING',
-        'code': 'KD'
+        'code': 'Kd'
       },
       {
         'suit': 'HEARTS',
         'value': '4',
-        'code': '4H'
+        'code': '4h'
       },
       {
         'suit': 'HEARTS',
-        'value': '10',
-        'code': '10H'
+        'value': 'T',
+        'code': 'Th'
       },
       {
         'suit': 'SPADES',
         'value': '9',
-        'code': '9S'
+        'code': '9s'
       },
       {
         'suit': 'CLUBS',
         'value': '7',
-        'code': '7C'
+        'code': '7c'
       },
       {
         'suit': 'SPADES',
         'value': '7',
-        'code': '7S'
+        'code': '7s'
       },
       {
         'suit': 'SPADES',
         'value': '8',
-        'code': '8S'
+        'code': '8s'
       },
       {
         'suit': 'DIAMONDS',
         'value': 'QUEEN',
-        'code': 'QD'
+        'code': 'Qd'
       },
       {
         'suit': 'HEARTS',
         'value': '3',
-        'code': '3H'
+        'code': '3h'
       },
       {
         'suit': 'HEARTS',
         'value': '8',
-        'code': '8H'
+        'code': '8h'
       },
       {
         'suit': 'CLUBS',
         'value': '8',
-        'code': '8C'
+        'code': '8c'
       },
       {
         'suit': 'SPADES',
         'value': '6',
-        'code': '6S'
+        'code': '6s'
       },
       {
         'suit': 'SPADES',
         'value': 'JACK',
-        'code': 'JS'
+        'code': 'Js'
       },
       {
         'suit': 'SPADES',
         'value': 'KING',
-        'code': 'KS'
+        'code': 'Ks'
       },
       {
         'suit': 'CLUBS',
         'value': '3',
-        'code': '3C'
+        'code': '3c'
       },
       {
         'suit': 'DIAMONDS',
         'value': '5',
-        'code': '5D'
+        'code': '5d'
       },
       {
         'suit': 'DIAMONDS',
         'value': '9',
-        'code': '9D'
+        'code': '9d'
       },
       {
         'suit': 'CLUBS',
         'value': '9',
-        'code': '9C'
+        'code': '9c'
       },
       {
         'suit': 'DIAMONDS',
         'value': 'JACK',
-        'code': 'JD'
+        'code': 'Jd'
       },
       {
         'suit': 'HEARTS',
         'value': '2',
-        'code': '2H'
+        'code': '2h'
       },
       {
         'suit': 'SPADES',
         'value': '4',
-        'code': '4S'
+        'code': '4s'
       },
       {
         'suit': 'CLUBS',
         'value': 'JACK',
-        'code': 'JC'
+        'code': 'Jc'
       },
       {
         'suit': 'HEARTS',
         'value': 'KING',
-        'code': 'KH'
+        'code': 'Kh'
       }
     ]);
   });
@@ -275,262 +275,262 @@ describe('deck methods', () => {
       {
         'suit': 'DIAMONDS',
         'value': '6',
-        'code': '6D'
+        'code': '6d'
       },
       {
         'suit': 'CLUBS',
         'value': 'QUEEN',
-        'code': 'QC'
+        'code': 'Qc'
       },
       {
         'suit': 'CLUBS',
         'value': '6',
-        'code': '6C'
+        'code': '6c'
       },
       {
         'suit': 'SPADES',
         'value': '5',
-        'code': '5S'
+        'code': '5s'
       },
       {
         'suit': 'SPADES',
         'value': 'QUEEN',
-        'code': 'QS'
+        'code': 'Qs'
       },
       {
         'suit': 'CLUBS',
         'value': 'KING',
-        'code': 'KC'
+        'code': 'Kc'
       },
       {
         'suit': 'CLUBS',
         'value': '5',
-        'code': '5C'
+        'code': '5c'
       },
       {
         'suit': 'HEARTS',
         'value': 'JACK',
-        'code': 'JH'
+        'code': 'Jh'
       },
       {
         'suit': 'SPADES',
         'value': 'ACE',
-        'code': 'AS'
+        'code': 'As'
       },
       {
         'suit': 'DIAMONDS',
         'value': '10',
-        'code': '10D'
+        'code': 'Td'
       },
       {
         'suit': 'SPADES',
         'value': '3',
-        'code': '3S'
+        'code': '3s'
       },
       {
         'suit': 'DIAMONDS',
         'value': '3',
-        'code': '3D'
+        'code': '3d'
       },
       {
         'suit': 'DIAMONDS',
         'value': '2',
-        'code': '2D'
+        'code': '2d'
       },
       {
         'suit': 'CLUBS',
         'value': '10',
-        'code': '10C'
+        'code': 'Tc'
       },
       {
         'suit': 'DIAMONDS',
         'value': '7',
-        'code': '7D'
+        'code': '7d'
       },
       {
         'suit': 'DIAMONDS',
         'value': '4',
-        'code': '4D'
+        'code': '4d'
       },
       {
         'suit': 'HEARTS',
         'value': '9',
-        'code': '9H'
+        'code': '9h'
       },
       {
         'suit': 'HEARTS',
         'value': '7',
-        'code': '7H'
+        'code': '7h'
       },
       {
         'suit': 'HEARTS',
         'value': '6',
-        'code': '6H'
+        'code': '6h'
       },
       {
         'suit': 'HEARTS',
         'value': 'QUEEN',
-        'code': 'QH'
+        'code': 'Qh'
       },
       {
         'suit': 'CLUBS',
         'value': 'ACE',
-        'code': 'AC'
+        'code': 'Ac'
       },
       {
         'suit': 'DIAMONDS',
         'value': 'ACE',
-        'code': 'AD'
+        'code': 'Ad'
       },
       {
         'suit': 'HEARTS',
         'value': 'ACE',
-        'code': 'AH'
+        'code': 'Ah'
       },
       {
         'suit': 'SPADES',
         'value': '10',
-        'code': '10S'
+        'code': 'Ts'
       },
       {
         'suit': 'CLUBS',
         'value': '2',
-        'code': '2C'
+        'code': '2c'
       },
       {
         'suit': 'HEARTS',
         'value': '5',
-        'code': '5H'
+        'code': '5h'
       },
       {
         'suit': 'SPADES',
         'value': '2',
-        'code': '2S'
+        'code': '2s'
       },
       {
         'suit': 'CLUBS',
         'value': '4',
-        'code': '4C'
+        'code': '4c'
       },
       {
         'suit': 'DIAMONDS',
         'value': '8',
-        'code': '8D'
+        'code': '8d'
       },
       {
         'suit': 'DIAMONDS',
         'value': 'KING',
-        'code': 'KD'
+        'code': 'Kd'
       },
       {
         'suit': 'HEARTS',
         'value': '4',
-        'code': '4H'
+        'code': '4h'
       },
       {
         'suit': 'HEARTS',
         'value': '10',
-        'code': '10H'
+        'code': 'Th'
       },
       {
         'suit': 'SPADES',
         'value': '9',
-        'code': '9S'
+        'code': '9s'
       },
       {
         'suit': 'CLUBS',
         'value': '7',
-        'code': '7C'
+        'code': '7c'
       },
       {
         'suit': 'SPADES',
         'value': '7',
-        'code': '7S'
+        'code': '7s'
       },
       {
         'suit': 'SPADES',
         'value': '8',
-        'code': '8S'
+        'code': '8s'
       },
       {
         'suit': 'DIAMONDS',
         'value': 'QUEEN',
-        'code': 'QD'
+        'code': 'Qd'
       },
       {
         'suit': 'HEARTS',
         'value': '3',
-        'code': '3H'
+        'code': '3h'
       },
       {
         'suit': 'HEARTS',
         'value': '8',
-        'code': '8H'
+        'code': '8h'
       },
       {
         'suit': 'CLUBS',
         'value': '8',
-        'code': '8C'
+        'code': '8c'
       },
       {
         'suit': 'SPADES',
         'value': '6',
-        'code': '6S'
+        'code': '6s'
       },
       {
         'suit': 'SPADES',
         'value': 'JACK',
-        'code': 'JS'
+        'code': 'Js'
       },
       {
         'suit': 'SPADES',
         'value': 'KING',
-        'code': 'KS'
+        'code': 'Ks'
       },
       {
         'suit': 'CLUBS',
         'value': '3',
-        'code': '3C'
+        'code': '3c'
       },
       {
         'suit': 'DIAMONDS',
         'value': '5',
-        'code': '5D'
+        'code': '5d'
       },
       {
         'suit': 'DIAMONDS',
         'value': '9',
-        'code': '9D'
+        'code': '9d'
       },
       {
         'suit': 'CLUBS',
         'value': '9',
-        'code': '9C'
+        'code': '9c'
       },
       {
         'suit': 'DIAMONDS',
         'value': 'JACK',
-        'code': 'JD'
+        'code': 'Jd'
       },
       {
         'suit': 'HEARTS',
         'value': '2',
-        'code': '2H'
+        'code': '2h'
       },
       {
         'suit': 'SPADES',
         'value': '4',
-        'code': '4S'
+        'code': '4s'
       },
       {
         'suit': 'CLUBS',
         'value': 'JACK',
-        'code': 'JC'
+        'code': 'Jc'
       },
       {
         'suit': 'HEARTS',
         'value': 'KING',
-        'code': 'KH'
+        'code': 'Kh'
       }
     ]);
   });
