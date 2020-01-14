@@ -1,5 +1,9 @@
 const inquirer = require('inquirer');
+const socket = require('socket.io-client')('http://localhost:7890');
 const { signUpPrompt, logInPrompt } = require('./userLoginSignUp');
+socket.on('disconnect', function() {
+  socket.emit('disconnect');
+});
 
 const startApp = [{
   type: 'list',
@@ -25,5 +29,4 @@ const pokerApp = () => {
       console.log('error:', err);
     });
 };
-
-module.exports = pokerApp;
+module.exports = { pokerApp };
