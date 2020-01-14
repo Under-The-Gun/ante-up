@@ -1,10 +1,4 @@
-{
-<<<<<<< HEAD
-  "name": "A",
-=======
-
   "name": "ante-up",
->>>>>>> 62d34fca83e793f5c52918a16e4d8d41ff21792f
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -34,15 +28,7 @@
     "express": "^4.17.1",
     "inquirer": "^7.0.3",
     "mongoose": "^5.8.7",
-<<<<<<< HEAD
     "socket.io": "^2.3.0",
-<<<<<<< HEAD
-=======
-    "socket.io-client": "^2.3.0",
->>>>>>> 77602e826af610f51e2fcbddd0a7a8faee2b916e
-    "socketio": "^1.0.0"
-=======
-    "socket.io": "^2.3.0"
->>>>>>> 62d34fca83e793f5c52918a16e4d8d41ff21792f
+    "socket.io-client": "^2.3.0"
   }
 }
