@@ -14,20 +14,22 @@ const startApp = [{
 
 
 const pokerApp = () => {
-  inquirer.prompt(startApp)
-    .then(choice => {
-      switch(choice.start) {
-        case 'Log In' :
-          logInPrompt().then(pokerApp);
-          break;
-        case 'Sign Up': 
-          signUpPrompt().then(pokerApp);
-          break;
-      }
-    })
-    .catch(err => {
-      console.log('error:', err);
-    });
+  socket.on('connect', () => {
+    inquirer.prompt(startApp)
+      .then(choice => {
+        switch(choice.start) {
+          case 'Log In' :
+            logInPrompt().then(pokerApp);
+            break;
+          case 'Sign Up': 
+            signUpPrompt().then(pokerApp);
+            break;
+        }
+      })
+      .catch(err => {
+        console.log('error:', err);
+      });
+  });
 };
 pokerApp();
 module.exports = { pokerApp };

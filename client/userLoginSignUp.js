@@ -5,19 +5,19 @@ const loginInput = require('./loginInput');
 const signUpInput = require('./signupInput');
 
 const logInPrompt = () => 
-  socket.on('connect', () => {
-    inquirer.prompt(loginInput)
-      .then(data => {
-        socket.emit('logIn', data);
-      });
-  });
+  // socket.on('connect', () => {
+  inquirer.prompt(loginInput)
+    .then(data => {
+      socket.emit('/api/auth/login', data);
+    });
+  // });
 const signUpPrompt = () => 
-  socket.on('connect', () => {
-    inquirer.prompt(signUpInput)
-      .then(data => {
-        socket.emit('signUp', data);
-      });
-  });
+  // socket.on('connect', () => {
+  inquirer.prompt(signUpInput)
+    .then(data => {
+      socket.emit('/api/auth/signup', data);
+    });
+  // });
   
 module.exports = { signUpPrompt, logInPrompt };
 
