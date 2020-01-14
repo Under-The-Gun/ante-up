@@ -30,6 +30,10 @@
     "inquirer": "^7.0.3",
     "mongoose": "^5.8.7",
     "socket.io": "^2.3.0",
+<<<<<<< HEAD
+=======
+    "socket.io-client": "^2.3.0",
+>>>>>>> 77602e826af610f51e2fcbddd0a7a8faee2b916e
     "socketio": "^1.0.0"
   }
 }
