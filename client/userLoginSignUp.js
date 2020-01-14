@@ -9,7 +9,7 @@ const logInPrompt = () =>
   inquirer.prompt(loginInput)
     .then(data => {
       console.log(data);
-      socket.emit('/api/auth/login', data);
+      socket.emit('login', data);
     });
   // });
 const signUpPrompt = () => 
@@ -17,7 +17,7 @@ const signUpPrompt = () =>
   inquirer.prompt(signUpInput)
     .then(data => {
       console.log(data);
-      socket.emit('/api/auth/signup', data);
+      socket.emit('signup', data);
     });
   // });
   
