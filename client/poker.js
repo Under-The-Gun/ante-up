@@ -5,10 +5,9 @@ socket.on('disconnect', function() {
 });
 socket.on('connect', () => {
   console.log('You\'re connected', socket.id);
-  firstHandPrompt()
-    .then(userChoice => {
-      socket.emit('userChoice', userChoice);
-      playerTurnPrompt();
+  loginPrompt()
+    .then(userInfo => {
+      socket.emit('log-in', userInfo);
     });
 });
 socket.on('deal-hands', (data) => {
