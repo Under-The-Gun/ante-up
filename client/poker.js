@@ -1,4 +1,9 @@
 const socket = require('socket.io-client')('http://localhost:7890');
+
+socket.on('disconnect', function() {
+  socket.emit('disconnect');
+});
+
 const { firstHandPrompt, playerTurnPrompt } = require('./tablePrompts');
 socket.on('disconnect', function() {
   socket.emit('disconnect');

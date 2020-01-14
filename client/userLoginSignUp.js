@@ -1,36 +1,25 @@
-const request = require('superagent')
-    ;
+// const request = require('superagent');
+const socket = require('socket.io-client')('http://localhost:7890');
 const inquirer = require('inquirer');
 const loginInput = require('./loginInput');
 const signUpInput = require('./signupInput');
 
 const logInPrompt = () => 
+  // socket.on('connect', () => {
   inquirer.prompt(loginInput)
-    .then(credentials => {
-      let user = {
-        username: credentials.username,
-        password: credentials.password
-      };
-      return request
-        .post('/api/auth/login')
-        .send(user)
-        .then(({ body }) => {
-          user = body;
-        });
+    .then(data => {
+      console.log(data);
+      socket.emit('login', data);
     });
+  // });
 const signUpPrompt = () => 
+  // socket.on('connect', () => {
   inquirer.prompt(signUpInput)
-    .then(credentials => {
-      let user = {
-        username: credentials.username,
-        password: credentials.password
-      };
-      return request
-        .post('/api/auth/signup')
-        .send(user)
-        .then(({ body }) => {
-          user = body;
-        });
+    .then(data => {
+      console.log(data);
+      socket.emit('signup', data);
     });
+  // });
+  
 module.exports = { signUpPrompt, logInPrompt };
 
