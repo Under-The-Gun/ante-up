@@ -8,6 +8,7 @@ const logInPrompt = () =>
   // socket.on('connect', () => {
   inquirer.prompt(loginInput)
     .then(data => {
+      console.log(data);
       socket.emit('/api/auth/login', data);
     });
   // });
@@ -15,6 +16,7 @@ const signUpPrompt = () =>
   // socket.on('connect', () => {
   inquirer.prompt(signUpInput)
     .then(data => {
+      console.log(data);
       socket.emit('/api/auth/signup', data);
     });
   // });
