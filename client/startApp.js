@@ -18,10 +18,10 @@ const startAppPrompt = () =>
     .then(choice => {
       switch(choice.start) {
         case 'log-in' :
-          logInPrompt().then();
+          logInPrompt();
           break;
         case 'sign-up': 
-          signUpPrompt().then();
+          signUpPrompt();
           break;
       }
     })

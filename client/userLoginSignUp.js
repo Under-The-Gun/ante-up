@@ -4,20 +4,35 @@ const inquirer = require('inquirer');
 const loginInput = require('./loginInput');
 const signUpInput = require('./signupInput');
 
+
+
 const logInPrompt = () => 
-  // socket.on('connect', () => {
   inquirer.prompt(loginInput)
     .then(data => {
-      console.log(data);
       socket.emit('login', data);
+      socket.on('login-successful', () => {
+        console.log('You\'ve logged in successfully');
+        //if first user in room dealer prompt
+        //else out of turn prompt
+        
+      });
+      socket.on('login-unsuccessful', () => {
+        console.log('You could not be logged in.');
+        logInPrompt();
+      });
     });
-  // });
 const signUpPrompt = () => 
-  // socket.on('connect', () => {
   inquirer.prompt(signUpInput)
     .then(data => {
-      console.log(data);
       socket.emit('signup', data);
+      socket.on('sign-up-successful', () => {
+        console.log('You\'ve signed up successfully, now please log in.');
+        logInPrompt();
+      });
+      socket.on('sign-up-unsuccessful', () => {
+        console.log('You could not be signed up properly, please try again.');
+        signUpPrompt();
+      });
     });
   // });
   
