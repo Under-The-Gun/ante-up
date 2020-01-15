@@ -8,7 +8,7 @@ describe('GameState methods', () => {
 
     testGameState.board = { cardThree: 'Th', cardFour: '3h', cardFive: 'Kh', cardSix: '5h', cardSeven: '6c' };
 
-    let winningHandString = testGameState.solveHands();
+    const winningHandString = testGameState.solveHands();
     expect(winningHandString).toEqual('Three of a Kind, 6\'s');
   });
 });
