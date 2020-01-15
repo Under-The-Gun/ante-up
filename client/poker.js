@@ -16,5 +16,5 @@ socket.on('connect', () => {
     
 });
 socket.on('your-hold-cards', (data) => {
-  console.log('recieved cards', data);
+  console.log('received cards', data);
 });
