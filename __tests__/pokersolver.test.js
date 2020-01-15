@@ -5,7 +5,6 @@ describe('pokersolver methods', () => {
     let hand = Hand.solve(['Kh', 'Tc', '5d', 'As', '3c', '3s', '2h']);
     expect(hand.descr).toEqual('Pair, 3\'s');
   });
-
   it('should return best hand as Two Pair', () => {
     let hand = Hand.solve(['8d', '8s', '4s', '5c', 'Qd', '5d', 'Qh']);
     expect(hand.name).toEqual('Two Pair');
