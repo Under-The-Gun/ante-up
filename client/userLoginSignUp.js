@@ -20,6 +20,7 @@ const logInPrompt = (socket) =>
           reject();
         });
       });
+
     });
 const signUpPrompt = (socket) => 
   inquirer.prompt(signUpInput)
