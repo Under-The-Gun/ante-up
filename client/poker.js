@@ -1,8 +1,6 @@
 const socket = require('socket.io-client')('http://localhost:7890');
 const { firstHandPrompt, playerTurnPrompt, playerOutOfTurnPrompt } = require('./tablePrompts');
-const { logInPrompt } = require('./userLoginSignUp');
 const { startAppPrompt } = require('./startApp');
-
 socket.on('disconnect', function() {
   socket.emit('disconnect');
 });
@@ -10,6 +8,7 @@ socket.on('connect', () => {
   console.log('You\'re connected', socket.id);
   startAppPrompt(socket)
     .then(data => {
+      console.log('HEllllooooooooo');
       socket.emit('get-user-count', data);
       socket.on('dealer-options', () => {
         firstHandPrompt(socket);
