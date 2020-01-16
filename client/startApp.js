@@ -1,10 +1,5 @@
 const inquirer = require('inquirer');
-const socket = require('socket.io-client')('http://localhost:7890');
 const { signUpPrompt, logInPrompt } = require('./userLoginSignUp');
-
-socket.on('disconnect', function() {
-  socket.emit('disconnect');
-});
 
 const startApp = [{
   type: 'list',
@@ -13,16 +8,14 @@ const startApp = [{
   choices: ['log-in', 'sign-up']
 }];
 
-const startAppPrompt = () =>
+const startAppPrompt = (socket) =>
   inquirer.prompt(startApp)
     .then(choice => {
       switch(choice.start) {
         case 'log-in' :
-          logInPrompt().then();
-          break;
+          return logInPrompt(socket);
         case 'sign-up': 
-          signUpPrompt().then();
-          break;
+          return signUpPrompt(socket);
       }
     })
     .catch(err => {
