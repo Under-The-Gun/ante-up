@@ -12,6 +12,9 @@ socket.on('connect', () => {
           socket.emit('player-readied-up');
           socket.on('players-ready', () => {
             socket.emit('deal-player-cards');
+            // socket.on('', () => {
+            //   return;
+            // });
           });
           socket.on('your-cards', (data) => {
             console.log(data);
