@@ -1,9 +1,10 @@
-
+/* eslint-disable no-unused-vars */
+const colors = require('colors');
 const loginInput = [
   {
     type: 'input',
     name: 'username',
-    message: 'Please enter Username.',
+    message: 'Please enter Username.'.green.bold,
     validate: username => {
       if(username.length !== 0) {
         return true;
@@ -15,7 +16,7 @@ const loginInput = [
   {
     type: 'password',
     name: 'password',
-    message: 'Please enter a password',
+    message: 'Please enter a password'.green.bold,
     validate: pass => {
       if(pass.length !== 0) {
         return true;
