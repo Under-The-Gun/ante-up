@@ -22,7 +22,7 @@ const startHandInputs = [
     type: 'list',
     name: 'deal-hands',
     message: 'You may choose from the following options.',
-    choices: ['deal-hands']
+    choices: ['ready-up']
   }
 ];
 const lobbyInputs = [
