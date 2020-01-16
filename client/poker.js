@@ -4,9 +4,8 @@ const { startAppPrompt } = require('./startApp');
 
 socket.on('connect', () => {
   console.log('You\'re connected', socket.id);
-  startAppPrompt(socket)
+  const start = () => startAppPrompt(socket)
     .then(data => {
-      console.log('HEllllooooooooo');
       socket.emit('get-user-count', data);
       socket.on('dealer-options', () => {
         firstHandPrompt(socket).then(() => {
@@ -16,7 +15,10 @@ socket.on('connect', () => {
       socket.on('out-of-turn-options', () => {
         playerOutOfTurnPrompt(socket);
       });
-    }).catch();
+    }).catch(() => {
+      start();
+    });
+  start();
 });
 socket.on('your-hold-cards', (data) => {
   console.log(data);
