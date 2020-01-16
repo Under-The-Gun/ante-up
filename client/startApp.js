@@ -17,8 +17,5 @@ const startAppPrompt = (socket) =>
         case 'sign-up': 
           return signUpPrompt(socket);
       }
-    })
-    .catch(err => {
-      console.log('error:', err);
     });
 module.exports = { startAppPrompt };
