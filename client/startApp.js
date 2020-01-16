@@ -1,10 +1,12 @@
+/* eslint-disable no-unused-vars */
 const inquirer = require('inquirer');
+const colors = require('colors');
 const { signUpPrompt, logInPrompt } = require('./userLoginSignUp');
 
 const startApp = [{
   type: 'list',
   name: 'start',
-  message: 'Ante-Up: A Terminal Based Multiplayer Texas Holdem Game',
+  message: 'Ante-Up: A Terminal Based Multiplayer Texas Holdem Game'.cyan.bold,
   choices: ['log-in', 'sign-up']
 }];
 

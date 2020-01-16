@@ -2,11 +2,12 @@ require('dotenv').config();
 
 const request = require('supertest');
 const app = require('../lib/app');
+const signupInput = require('../client/signupInput');
 const connect = require('../lib/utils/connect');
 const mongoose = require('mongoose');
 const User = require('../lib/model/User');
 
-describe('user signup/in routes', () => {
+describe('user signupInput/in routes', () => {
   beforeAll(() => {
     connect();
   });
@@ -18,25 +19,25 @@ describe('user signup/in routes', () => {
     // return mongoose.connection.close();
   });
 
-  it('can signup a user with a name and password', () => {
+  it('can signupInput a user with a username and password', () => {
     return request(app)
-      .post('/api/v1/user/signup')
-      .send({ name: 'MaryJane', password: 'Puppies', bank: 1000 })
+      .post('/api/v1/user/signupInput')
+      .send({ username: 'MaryJane', password: 'Puppies' })//bank: 1000 })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          name: 'MaryJane',
-          bank: 1000,
+          username: 'MaryJane',
+          // bank: 1000,
           passwordHash: expect.any(String),
           __v: 0
         });
       });
   });
   it('fails when no username is used', async () => {
-    await User.create({ name: 'MarySue', password: 'Puppies', bank: 1000 });
+    await User.create({ username: 'MarySue', password: 'Puppies', bank: 1000 });
     return request(app)
       .post('/api/v1/user/login')
-      .send({ name: 'Mary', password: 'Puppies', bank: 1000 })
+      .send({ username: 'Mary', password: 'Puppies', bank: 1000 })
       .then(res => {
         expect(res.body).toEqual({
           message: 'Invalid Name/Password',
@@ -45,10 +46,10 @@ describe('user signup/in routes', () => {
       });
   });
   it('fails when invalid password is used', async () => {
-    await User.create({ name: 'MarySue', password: 'Dogs', bank: 1000 });
+    await User.create({ username: 'MarySue', password: 'Dogs', bank: 1000 });
     return request(app)
       .post('/api/v1/user/login')
-      .send({ name: 'Mary', password: 'Puppies', bank: 1000 })
+      .send({ username: 'Mary', password: 'Puppies', bank: 1000 })
       .then(res => {
         expect(res.body).toEqual({
           message: 'Invalid Name/Password',

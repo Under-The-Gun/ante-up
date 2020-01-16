@@ -1,9 +1,13 @@
+/* eslint-disable no-unused-vars */
+// FRONT END SOCKET 
 const socket = require('socket.io-client')('http://localhost:7890');
+const color = require('colors');
 const { firstHandPrompt, playerOutOfTurnPrompt } = require('./tablePrompts');
 const { startAppPrompt } = require('./startApp');
 
 socket.on('connect', () => {
-  console.log('You\'re connected', socket.id);
+
+  console.log('You\'re connected'.rainbow.bold, socket.id);
   const start = () => startAppPrompt(socket)
     .then(data => {
       socket.emit('get-user-count', data);
