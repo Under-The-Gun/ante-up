@@ -16,9 +16,6 @@ socket.on('connect', () => {
           socket.emit('player-readied-up');
           socket.on('players-ready', () => {
             socket.emit('deal-player-cards');
-            // socket.on('', () => {
-            //   return;
-            // });
           });
           socket.on('your-cards', (data) => {
             console.log(data);
@@ -32,13 +29,15 @@ socket.on('connect', () => {
           socket.on('waiting-for-ready', () => {
             console.log('waiting for all players to ready up');
           });
+        }).catch(() => {
+          start();
         });
       });
       socket.on('out-of-turn-options', () => {
         playerOutOfTurnPrompt(socket);
       });
-
     });
+  start();
 
 });
 socket.on('player-joined-table', () => {
