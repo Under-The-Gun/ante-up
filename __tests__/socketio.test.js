@@ -1,11 +1,15 @@
+require('dotenv').config();
 const io = require('socket.io-client');
 const server = require('../lib/app');
-
+const mongoose = require('mongoose');
+const connect = require('../lib/utils/connect');
 
 let socket;
 
 describe('login signup', () => {
-
+  beforeAll(() => {
+    connect();
+  });
   beforeEach(done => {
     console.log('Trying to connect client in beforeEach...');
     socket = io.connect('http://localhost:3000');
@@ -14,25 +18,43 @@ describe('login signup', () => {
       done();
     });
   });
+  beforeEach(() => {
+    return mongoose.connection.dropDatabase();
+  });
 
   afterEach(done => {
     socket.disconnect();
     done();
   });
 
-  describe('socket-test', () => {
+  //Use socket to emit and listen to events on the client side
 
-    //Use socket to emit and listen to events on the client side
+  it('handles bad login', (done) => {
+    socket.on('login-unsuccessful', message => {
+      expect(message).toEqual('Invalid username or password!');
+      done();
+    });
+    socket.emit('login', {
+      username: 'Danny',
+      password: '123'
+    });
+  });
 
-    it('handles bad login', () => {
-      socket.emit('login', {
-        username: 'Danny',
+
+  it('can create a user account', (done) => {
+    socket.on('sign-up-successful', user => {
+      console.log(user);
+      done();
+      expect(user).toEqual({
+        username: 'Danny H',
         password: '123'
       });
-      socket.on('login-unsuccessful', message => {
-        console.log('login-unsuccessful!!', message);
-      });
     });
-
+    socket.emit('signup', {
+      username: 'Danny H',
+      password: '123'
+    });
+    
   });
+
 });
