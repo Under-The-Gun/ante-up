@@ -6,8 +6,8 @@ socket.emit('disconnect');
 socket.on('disconnect')
 socket.emit('disconnect');
 socket.on('connect'
-socket.emit('your-hold-cards'
-socket.on('your-hold-cards'
+socket.emit('your-hold-cards')
+socket.on('your-hold-cards')
 
 <!-- IN startApp -->
 socket.on('disconnect')

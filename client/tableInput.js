@@ -25,8 +25,16 @@ const startHandInputs = [
     choices: ['deal-hands']
   }
 ];
+const lobbyInputs = [
+  {
+    type: 'list',
+    name: 'lobby',
+    message: 'Enter the game here.',
+    choices: ['start-game']
+  }
+];
 
 
 
-module.exports = { turnInputs, outOfTurnInputs, startHandInputs  }
+module.exports = { turnInputs, outOfTurnInputs, startHandInputs, lobbyInputs  }
 ;
