@@ -9,7 +9,7 @@ describe('GameState methods', () => {
     testGameState.board = { cardThree: 'Th', cardFour: '3h', cardFive: 'Kh', cardSix: '5h', cardSeven: '6c' };
 
     const winningHandString = testGameState.solveHands();
-    expect(winningHandString).toEqual({ 'winningHandDescription': 'Flush, Kh High', 'winningSockets': ['socketIdThree'] });
+    expect(winningHandString).toEqual({ winningHandDescription: 'Flush, Kh High', winningSockets: ['socketIdThree'] });
   });
 
   it('should solve for two winning hands when given multiple hands and some board cards', () => {
@@ -20,6 +20,6 @@ describe('GameState methods', () => {
     testGameState.board = { cardThree: 'Th', cardFour: '9h', cardFive: 'Kh', cardSix: '5h', cardSeven: '4h' };
 
     const winningHandString = testGameState.solveHands();
-    expect(winningHandString).toEqual({ 'winningHandDescription': 'Flush, Kh High', 'winningSockets': ['socketIdTwo', 'socketIdThree', 'socketIdOne'] });
+    expect(winningHandString).toEqual({ winningHandDescription: 'Flush, Kh High', winningSockets: ['socketIdTwo', 'socketIdThree', 'socketIdOne'] });
   });
 });
