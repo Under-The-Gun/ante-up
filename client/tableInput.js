@@ -22,8 +22,9 @@ const startHandInputs = [
   {
     type: 'list',
     name: 'deal-hands',
+
     message: 'You may choose from the following options.'.cyan.bold,
-    choices: ['deal-hands']
+    choices: ['ready-up']
   }
 ];
 const lobbyInputs = [

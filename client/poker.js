@@ -1,26 +1,45 @@
 /* eslint-disable no-unused-vars */
 // FRONT END SOCKET 
 const socket = require('socket.io-client')('http://localhost:7890');
-const { firstHandPrompt, playerTurnPrompt, playerOutOfTurnPrompt } = require('./tablePrompts');
 const color = require('colors');
+const { firstHandPrompt, playerOutOfTurnPrompt } = require('./tablePrompts');
 const { startAppPrompt } = require('./startApp');
 
-socket.on('disconnect', function() {
-  socket.emit('disconnect');
-});
 socket.on('connect', () => {
+
   console.log('You\'re connected'.rainbow.bold, socket.id);
-  startAppPrompt(socket)
+  const start = () => startAppPrompt(socket)
     .then(data => {
-      console.log('HEllllooooooooo');
       socket.emit('get-user-count', data);
       socket.on('dealer-options', () => {
-        firstHandPrompt(socket);
+        firstHandPrompt(socket).then(() => {
+          socket.emit('player-readied-up');
+          socket.on('players-ready', () => {
+            socket.emit('deal-player-cards');
+            // socket.on('', () => {
+            //   return;
+            // });
+          });
+          socket.on('your-cards', (data) => {
+            console.log(data);
+          });
+          socket.on('game-board-cards', (data) => {
+            console.log(data);
+          });
+          socket.on('winning-data', (data) => {
+            console.log(data);
+          });
+          socket.on('waiting-for-ready', () => {
+            console.log('waiting for all players to ready up');
+          });
+        });
       });
       socket.on('out-of-turn-options', () => {
         playerOutOfTurnPrompt(socket);
       });
-    }).catch();
+
+    });
+
 });
 socket.on('player-joined-table', () => {
   //if first player at table give dealer prompt

@@ -1,12 +1,11 @@
+
 /* eslint-disable no-unused-vars */
 // const request = require('superagent');
 const colors = require('colors');
+
 const inquirer = require('inquirer');
 const loginInput = require('./loginInput');
 const signUpInput = require('./signupInput');
-
-
-
 
 const logInPrompt = (socket) =>
   inquirer.prompt(loginInput)
