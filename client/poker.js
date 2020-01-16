@@ -4,7 +4,7 @@ const { startAppPrompt } = require('./startApp');
 
 socket.on('connect', () => {
   console.log('You\'re connected', socket.id);
-  startAppPrompt(socket)
+  const start = () => startAppPrompt(socket)
     .then(data => {
       socket.emit('get-user-count', data);
       socket.on('dealer-options', () => {
@@ -33,7 +33,9 @@ socket.on('connect', () => {
       socket.on('out-of-turn-options', () => {
         playerOutOfTurnPrompt(socket);
       });
+
     });
+
 });
 socket.on('player-joined-table', () => {
   //if first player at table give dealer prompt

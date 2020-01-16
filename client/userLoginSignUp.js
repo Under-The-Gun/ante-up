@@ -1,10 +1,6 @@
-// const request = require('superagent');
 const inquirer = require('inquirer');
 const loginInput = require('./loginInput');
 const signUpInput = require('./signupInput');
-
-
-
 
 const logInPrompt = (socket) =>
   inquirer.prompt(loginInput)
