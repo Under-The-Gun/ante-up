@@ -3,11 +3,11 @@ const color = require('colors');
 const cleanUpCards = (data, type) => {
   switch(type) {
     case 'hold':
-      data.cardOne.visual.forEach((line, index) => console.log(`${data.cardOne.visual[index]} ${data.cardTwo.visual[index]}`));
+      data.cardOne.visual.forEach((line, index) => console.log(`                     ${data.cardOne.visual[index]}`.blue + '  ' + `${data.cardTwo.visual[index]}`.red));
       break;
 
     case 'board':
-      data.cardThree.visual.forEach((line, index) => console.log(`${data.cardThree.visual[index]}${data.cardFour.visual[index]}${data.cardFive.visual[index]}${data.cardSix.visual[index]}${data.cardSeven.visual[index]}`));
+      data.cardThree.visual.forEach((line, index) => console.log(`      ${data.cardThree.visual[index]}` `${data.cardFour.visual[index]}` `${data.cardFive.visual[index]}` `${data.cardSix.visual[index]}` `${data.cardSeven.visual[index]}`));
       break;
 
     case 'winner':
