@@ -7,7 +7,7 @@ const socket = require('socket.io-client')('https://alchemy-ante-up.herokuapp.co
 const color = require('colors');
 const { firstHandPrompt, playerOutOfTurnPrompt } = require('./tablePrompts');
 const { startAppPrompt } = require('./startApp');
-const { cleanUp } = require('../client/cleanUpData');
+const { cleanUpCards } = require('../client/cleanUpData');
 
 socket.on('connect', () => {
 
@@ -22,13 +22,14 @@ socket.on('connect', () => {
             socket.emit('deal-player-cards');
           });
           socket.on('your-cards', (data) => {
-            console.log(cleanUp(data));
+            cleanUpCards(data.holdCards, 'hold');
           });
           socket.on('game-board-cards', (data) => {
-            console.log(data);
+            cleanUpCards(data, 'board');
           });
           socket.on('winning-data', (data) => {
-            console.log(data);
+            if(data.winningSockets.includes(socket.id)) console.log('You are the Winner!');
+            cleanUpCards(data, 'winner');
           });
           socket.on('waiting-for-ready', () => {
             console.log('waiting for all players to ready up');
