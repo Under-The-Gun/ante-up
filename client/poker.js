@@ -5,7 +5,7 @@ const socket = require('socket.io-client')('http://localhost:7890', {
   reconnection: false
 });
 const color = require('colors');
-const { firstHandPrompt, playerOutOfTurnPrompt } = require('./tablePrompts');
+const { firstHandPrompt } = require('./tablePrompts');
 const { startAppPrompt } = require('./startApp');
 const { cleanUpCards } = require('../client/cleanUpData');
 
@@ -28,7 +28,7 @@ socket.on('connect', () => {
             cleanUpCards(data, 'board');
           });
           socket.on('winning-data', (data) => {
-            if(data.winningSockets.includes(socket.id)) console.log('You are the Winner!');
+            if(data.winningSockets.includes(socket.id)) console.log('                      You are the Winner!'.rainbow.bold);
             cleanUpCards(data, 'winner');
           });
           socket.on('waiting-for-ready', () => {
@@ -36,20 +36,9 @@ socket.on('connect', () => {
           });
         });
       });
-      socket.on('out-of-turn-options', () => {
-        playerOutOfTurnPrompt(socket);
-      });
     }).catch(() => {
       start();
     });
   start();
 
 });
-socket.on('player-joined-table', () => {
-  //if first player at table give dealer prompt
-  console.log('socket on player joined hit');
-  // else give out of turn prompt
-});
-
-
-

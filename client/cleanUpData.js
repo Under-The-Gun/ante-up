@@ -1,26 +1,27 @@
 const colors = require('colors');
 
+// Conditionally color the card strings
 const colorCard = (card) => {
   switch(card.suit) {
     case 'HEARTS': 
-      card.visual = card.visual.map(line => line = line.brightMagenta);
+      card.visual = card.visual.map(line => line = line.brightRed.bold);
       break;
 
     case 'DIAMONDS': 
-      card.visual = card.visual.map(line => line = line.brightRed);
+      card.visual = card.visual.map(line => line = line.brightCyan.bold);
       break;
 
     case 'CLUBS': 
-      card.visual = card.visual.map(line => line.brightYellow);
-      console.log('this happened');
+      card.visual = card.visual.map(line => line.brightGreen.bold);
       break;
 
     case 'SPADES': 
-      card.visual = card.visual.map(line => line = line.brightGreen);
+      card.visual = card.visual.map(line => line = line.brightYellow.bold);
       break;
   }
 };
 
+// Add the card strings so they can display inline
 const cleanUpCards = (data, type) => {
   switch(type) {
     case 'hold':
@@ -40,7 +41,7 @@ const cleanUpCards = (data, type) => {
 
     case 'winner':
       data.winningUserNames.forEach(user => console.log(`${user} has won!`));
-      console.log(`The winning hand was a ${data.winningHandDescription}.`);
+      console.log(`The winning hand was a ${data.winningHandDescription}.`.bold);
       break;
   }
 };
