@@ -1,6 +1,7 @@
+#!/usr/bin/env node
 /* eslint-disable no-unused-vars */
 // FRONT END SOCKET 
-const socket = require('socket.io-client')('http://localhost:7890', {
+const socket = require('socket.io-client')('https://alchemy-ante-up.herokuapp.com/', {
   reconnection: false
 });
 const color = require('colors');

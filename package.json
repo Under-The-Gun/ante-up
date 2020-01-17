@@ -1,6 +1,6 @@
 {
   "name": "ante-up",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Texas Hold-em hand generator",
   "main": "client/poker.js",
   "bin": "client/poker.js",
@@ -9,6 +9,9 @@
     "test:watch": "npm run test -- --watch",
     "start": "node server.js",
     "start:watch": "nodemon server.js"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "jest": {
     "testEnvironment": "node"
