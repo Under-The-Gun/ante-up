@@ -5,8 +5,9 @@ const socket = require('socket.io-client')('https://alchemy-ante-up.herokuapp.co
   reconnection: false
 });
 const color = require('colors');
-const { firstHandPrompt, playerOutOfTurnPrompt } = require('./tablePrompts');
+const { firstHandPrompt } = require('./tablePrompts');
 const { startAppPrompt } = require('./startApp');
+const { cleanUpCards } = require('../client/cleanUpData');
 
 socket.on('connect', () => {
 
@@ -21,21 +22,19 @@ socket.on('connect', () => {
             socket.emit('deal-player-cards');
           });
           socket.on('your-cards', (data) => {
-            console.log(data);
+            cleanUpCards(data.holdCards, 'hold');
           });
           socket.on('game-board-cards', (data) => {
-            console.log(data);
+            cleanUpCards(data, 'board');
           });
           socket.on('winning-data', (data) => {
-            console.log(data);
+            if(data.winningSockets.includes(socket.id)) console.log(`                                ${'You are the Winner!'.rainbow.bold.underline}`);
+            cleanUpCards(data, 'winner');
           });
           socket.on('waiting-for-ready', () => {
             console.log('waiting for all players to ready up');
           });
         });
-      });
-      socket.on('out-of-turn-options', () => {
-        playerOutOfTurnPrompt(socket);
       });
     }).catch(() => {
       start();
@@ -43,11 +42,3 @@ socket.on('connect', () => {
   start();
 
 });
-socket.on('player-joined-table', () => {
-  //if first player at table give dealer prompt
-  console.log('socket on player joined hit');
-  // else give out of turn prompt
-});
-
-
-

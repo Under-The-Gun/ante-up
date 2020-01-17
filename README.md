@@ -1,5 +1,4 @@
 # ante-up
-
 Dependencies used
 devDependencies/npm
     jest
