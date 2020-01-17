@@ -13,7 +13,7 @@ const logInPrompt = (socket) =>
       socket.emit('login', data);
       return new Promise((resolve, reject) => {
         socket.on('login-successful', () => {
-          console.log('You\'ve logged in successfully'.green.bold);
+          console.log('You\'ve logged in successfully'.brightGreen.bold);
           resolve();
         });
         socket.on('login-unsuccessful', () => {
@@ -28,7 +28,7 @@ const signUpPrompt = (socket) =>
     .then(data => {
       socket.emit('signup', data);
       socket.on('sign-up-successful', () => {
-        console.log('You\'ve signed up successfully, now please log in.'.green.bold);
+        console.log('You\'ve signed up successfully, now please log in.'.brightGreen.bold);
         socket.emit('connect');
       });
       return new Promise((reject) => {

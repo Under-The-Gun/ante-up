@@ -6,7 +6,7 @@ const { signUpPrompt, logInPrompt } = require('./userLoginSignUp');
 const startApp = [{
   type: 'list',
   name: 'start',
-  message: 'Ante-Up: A Terminal Based Multiplayer Texas Holdem Game'.cyan.bold,
+  message: 'Ante-Up: A Terminal Based Multiplayer Texas Holdem Game'.cyan.underline.bold,
   choices: ['log-in', 'sign-up']
 }];
 
