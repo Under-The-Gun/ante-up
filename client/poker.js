@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 /* eslint-disable no-unused-vars */
 // FRONT END SOCKET 
-const socket = require('socket.io-client')('https://alchemy-ante-up.herokuapp.com/');
+const socket = require('socket.io-client')('https://alchemy-ante-up.herokuapp.com/', {
+  reconnection: false
+});
 const color = require('colors');
 const { firstHandPrompt, playerOutOfTurnPrompt } = require('./tablePrompts');
 const { startAppPrompt } = require('./startApp');

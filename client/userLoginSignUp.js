@@ -27,11 +27,12 @@ const signUpPrompt = (socket) =>
   inquirer.prompt(signUpInput)
     .then(data => {
       socket.emit('signup', data);
-      return new Promise((resolve, reject) => {
-        socket.on('sign-up-successful', () => {
-          console.log('You\'ve signed up successfully, now please log in.'.green.bold);
-          resolve();
-        });
+      socket.on('sign-up-successful', () => {
+        console.log('You\'ve signed up successfully, now please log in.'.green.bold);
+        socket.emit('connect');
+      });
+      return new Promise((reject) => {
+        
         socket.on('sign-up-unsuccessful', () => {
           console.log('You could not be signed up properly, please try again.'.red.underline.bold);
           reject();
