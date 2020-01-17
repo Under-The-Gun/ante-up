@@ -8,7 +8,7 @@ const devsInput = [
   {
     type: 'list',
     name: 'devolpers',
-    message: 'Devolpers: Seth Ripmen, Matt Munch, Eve Stockstill, Caleb Pendergraft',
+    message: `Developers: Seth Ripman, Matt Munch, Eve Stockstill, Caleb Pendergraft`,
     choices: ['log-in', 'sign-up']
   }
 ];
