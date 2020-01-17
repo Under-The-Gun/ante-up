@@ -3,19 +3,20 @@ const colors = require('colors');
 const colorCard = (card) => {
   switch(card.suit) {
     case 'HEARTS': 
-      card.visual.forEach(line => line = line.brightMagenta);
+      card.visual = card.visual.map(line => line = line.brightMagenta);
       break;
 
     case 'DIAMONDS': 
-      card.visual.forEach(line => line = line.brightRed);
+      card.visual = card.visual.map(line => line = line.brightRed);
       break;
 
     case 'CLUBS': 
-      card.visual.forEach(line => line = line.brightYellow);
+      card.visual = card.visual.map(line => line.brightYellow);
+      console.log('this happened');
       break;
 
     case 'SPADES': 
-      card.visual.forEach(line => line = line.brightGreen);
+      card.visual = card.visual.map(line => line = line.brightGreen);
       break;
   }
 };
