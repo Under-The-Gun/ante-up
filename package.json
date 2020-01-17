@@ -1,20 +1,28 @@
 {
   "name": "ante-up",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "version": "1.0.1",
+  "description": "Texas Hold-em hand generator",
+  "main": "client/poker.js",
+  "bin": "client/poker.js",
   "scripts": {
     "test": "jest --verbose --runInBand",
     "test:watch": "npm run test -- --watch",
     "start": "node server.js",
     "start:watch": "nodemon server.js"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "jest": {
     "testEnvironment": "node"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "texas hold-em",
+    "ante-up",
+    "hold-em"
+  ],
+  "author": "Alchemy Under the Gun",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^24.0.25",
     "eslint": "^6.8.0",
@@ -25,7 +33,6 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
-    "commander": "^4.1.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "inquirer": "^7.0.3",
@@ -34,4 +41,5 @@
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
   }
+
 }
