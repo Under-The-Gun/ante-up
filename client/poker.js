@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 // FRONT END SOCKET 
-const socket = require('socket.io-client')('http://localhost:7890');
+const socket = require('socket.io-client')('http://localhost:7890', {
+  reconnection: false
+});
 const color = require('colors');
 const { firstHandPrompt, playerOutOfTurnPrompt } = require('./tablePrompts');
 const { startAppPrompt } = require('./startApp');
