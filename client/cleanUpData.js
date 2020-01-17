@@ -1,3 +1,5 @@
+const color = require('colors');
+
 const cleanUpCards = (data, type) => {
   switch(type) {
     case 'hold':
