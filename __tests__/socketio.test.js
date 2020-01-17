@@ -1,8 +1,10 @@
+/* eslint-disable no-console */
 require('dotenv').config();
 const io = require('socket.io-client');
-const server = require('../lib/app');
+// const server = require('../lib/app');
 const mongoose = require('mongoose');
 const connect = require('../lib/utils/connect');
+const User = require('../lib/model/User');
 
 let socket;
 
@@ -18,8 +20,12 @@ describe('login signup', () => {
       done();
     });
   });
+
   beforeEach(() => {
     return mongoose.connection.dropDatabase();
+  });
+  beforeEach(() => {
+    return User.init();
   });
 
   afterEach(done => {
@@ -29,7 +35,7 @@ describe('login signup', () => {
 
   //Use socket to emit and listen to events on the client side
 
-  it('handles bad login', (done) => {
+  it('handles input for  a user that does not exist', (done) => {
     socket.on('login-unsuccessful', message => {
       expect(message).toEqual('Invalid username or password!');
       done();
@@ -40,21 +46,46 @@ describe('login signup', () => {
     });
   });
 
+  it('can not create account if username is taken', async(done) => {
+    await User.create({ username: 'Danny', password: '123' })
+      .then(createdUser => console.log('created test user', createdUser));
+
+    socket.on('sign-up-unsuccessful', message => {
+      expect(message).toEqual('Username taken, please try again!');
+      done();
+    });
+    socket.emit('signup', {
+      username: 'Danny',
+      password: '12345'
+    });
+  });
+
+  it('can not authorize to account if password is wrong', async(done) => {
+    await User.create({ username: 'Danny eve', password: '12345' })
+      .then(authUser=> console.log('can not auth', authUser));
+    socket.on('login-unsuccessful', message => {
+      expect(message).toEqual('Invalid username or password!');
+      done();
+    });
+    socket.emit('login', {
+      username: 'Danny',
+      passwordHash: '1234'
+    });
+  });
 
   it('can create a user account', (done) => {
     socket.on('sign-up-successful', user => {
-      console.log(user);
       done();
       expect(user).toEqual({
         username: 'Danny H',
-        password: '123'
+        passwordHash: user.passwordHash,
+        _id: user._id.toString(),
+        __v: 0
       });
     });
     socket.emit('signup', {
       username: 'Danny H',
       password: '123'
     });
-    
   });
-
 });
