@@ -1,6 +1,6 @@
 {
   "name": "ante-up",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Texas Hold-em hand generator",
   "main": "client/poker.js",
   "bin": "client/poker.js",
