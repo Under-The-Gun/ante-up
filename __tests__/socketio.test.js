@@ -1,8 +1,9 @@
 require('dotenv').config();
 const io = require('socket.io-client');
-const server = require('../lib/app');
+// const server = require('../lib/app');
 const mongoose = require('mongoose');
 const connect = require('../lib/utils/connect');
+const User = require('../lib/model/User');
 
 let socket;
 
@@ -18,6 +19,7 @@ describe('login signup', () => {
       done();
     });
   });
+
   beforeEach(() => {
     return mongoose.connection.dropDatabase();
   });
@@ -29,7 +31,7 @@ describe('login signup', () => {
 
   //Use socket to emit and listen to events on the client side
 
-  it('handles bad login', (done) => {
+  it('handles bad for user that does not exist', (done) => {
     socket.on('login-unsuccessful', message => {
       expect(message).toEqual('Invalid username or password!');
       done();
@@ -40,10 +42,23 @@ describe('login signup', () => {
     });
   });
 
+  it('cant create account if username is taken', async (done) => {
+    await User.create({ username: 'Danny', password: '123' })
+      .then(createdUser => console.log('created test user', createdUser));
+
+    socket.on('sign-up-unsuccessful', message => {
+      expect(message).toEqual('Username taken, please try again!');
+      done();
+    });
+
+    socket.emit('signup', {
+      username: 'Danny',
+      password: '12345'
+    });
+  });
 
   it('can create a user account', (done) => {
     socket.on('sign-up-successful', user => {
-      console.log(user);
       done();
       expect(user).toEqual({
         username: 'Danny H',
@@ -54,7 +69,5 @@ describe('login signup', () => {
       username: 'Danny H',
       password: '123'
     });
-    
   });
-
 });
