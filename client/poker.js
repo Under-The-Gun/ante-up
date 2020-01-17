@@ -34,13 +34,13 @@ socket.on('connect', () => {
           socket.on('waiting-for-ready', () => {
             console.log('waiting for all players to ready up');
           });
-        }).catch(() => {
-          start();
         });
       });
       socket.on('out-of-turn-options', () => {
         playerOutOfTurnPrompt(socket);
       });
+    }).catch(() => {
+      start();
     });
   start();
 
