@@ -15,11 +15,11 @@ const intermissionPrompt = (socket) =>
       switch(choice.intermission) {
         case 'play-again' :
             
-          socket.emit('player-readied-up');
+          socket.emit('deal-player-cards');
           break;
         case 'leave-table': 
           return new Promise((resolve, reject) => {
-            socket.emit('disconnect');
+            socket.disconnect();
             reject();
           }); 
       }
