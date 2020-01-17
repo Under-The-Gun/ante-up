@@ -7,6 +7,7 @@ const socket = require('socket.io-client')('https://alchemy-ante-up.herokuapp.co
 const color = require('colors');
 const { firstHandPrompt, playerOutOfTurnPrompt } = require('./tablePrompts');
 const { startAppPrompt } = require('./startApp');
+const { cleanUp } = require('../client/cleanUpData');
 
 socket.on('connect', () => {
 
@@ -21,7 +22,7 @@ socket.on('connect', () => {
             socket.emit('deal-player-cards');
           });
           socket.on('your-cards', (data) => {
-            console.log(data);
+            console.log(cleanUp(data));
           });
           socket.on('game-board-cards', (data) => {
             console.log(data);
