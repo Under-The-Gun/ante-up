@@ -1,5 +1,6 @@
 const GameState = require('../lib/utils/gameState');
 
+
 describe('GameState methods', () => {
   it('should solve hands when given multiple hands and some board cards', () => {
     let testGameState = new GameState();
