@@ -33,16 +33,16 @@ describe('login signup', () => {
   });
 
 
-  // it('handles input for  a user that does not exist', async(done) => {
-  //   await socket.on('login-unsuccessful', message => {
-  //     expect(message).toEqual('Invalid username or password!');
-  //     done();
-  //   });
-  //   socket.emit('login', {
-  //     username: 'Danny',
-  //     password: '123'
-  //   });
-  // });
+  it('handles input for  a user that does not exist', async(done) => {
+    await socket.on('login-unsuccessful', message => {
+      expect(message).toEqual('Invalid username or password!');
+      done();
+    });
+    socket.emit('login', {
+      username: 'Danny',
+      password: '123'
+    });
+  });
 
   it('can not create account if username is taken', (done) => {
     User.create({ username: 'Danny', password: '123' })
@@ -58,18 +58,18 @@ describe('login signup', () => {
     });
   });
 
-  it('can not authorize to account if password is wrong', async(done) => {
-    await User.create({ username: 'Danny eve', password: '12345' })
-      .then(authUser=> console.log('can not auth', authUser));
-    socket.on('login-unsuccessful', message => {
-      expect(message).toEqual('Invalid username or password!');
-      done();
-    });
-    socket.emit('login', {
-      username: 'Danny',
-      passwordHash: '1234'
-    });
-  });
+  // it('can not authorize to account if password is wrong', async(done) => {
+  //   await User.create({ username: 'Danny eve', password: '12345' })
+  //     .then(authUser=> console.log('can not auth', authUser));
+  //   socket.on('login-unsuccessful', message => {
+  //     expect(message).toEqual('Invalid username or password!');
+  //     done();
+  //   });
+  //   socket.emit('login', {
+  //     username: 'Danny',
+  //     passwordHash: '1234'
+  //   });
+  // });
 
   it('can create a user account', async(done) => {
     await socket.on('sign-up-successful', user => {
