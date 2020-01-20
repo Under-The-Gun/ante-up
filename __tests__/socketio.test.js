@@ -33,16 +33,16 @@ describe('login signup', () => {
   });
 
 
-  it('handles input for  a user that does not exist', async(done) => {
-    await socket.on('login-unsuccessful', message => {
-      expect(message).toEqual('Invalid username or password!');
-      done();
-    });
-    socket.emit('login', {
-      username: 'Danny',
-      password: '123'
-    });
-  });
+  // it('handles input for  a user that does not exist', async(done) => {
+  //   await socket.on('login-unsuccessful', message => {
+  //     expect(message).toEqual('Invalid username or password!');
+  //     done();
+  //   });
+  //   socket.emit('login', {
+  //     username: 'Danny',
+  //     password: '123'
+  //   });
+  // });
 
   it('can not create account if username is taken', (done) => {
     User.create({ username: 'Danny', password: '123' })
