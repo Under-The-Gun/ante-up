@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const inquirer = require('inquirer');
 const { turnInputs, outOfTurnInputs, startHandInputs } = require('./tableInput');
 

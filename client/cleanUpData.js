@@ -1,6 +1,7 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 const colors = require('colors');
 
-// Conditionally color the card strings
 const colorCard = (card) => {
   switch(card.suit) {
     case 'HEARTS': 
@@ -21,7 +22,6 @@ const colorCard = (card) => {
   }
 };
 
-// Add the card strings so they can display inline
 const cleanUpCards = (data, type) => {
   switch(type) {
     case 'hold':

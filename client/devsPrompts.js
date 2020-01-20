@@ -7,8 +7,8 @@ const colors = require('colors');
 const devsInput = [
   {
     type: 'list',
-    name: 'devolpers',
-    message: `Developers: Seth Ripman, Matt Munch, Eve Stockstill, Caleb Pendergraft`,
+    name: 'developers',
+    message: 'Developers: Seth Ripman, Matt Munch, Eve Stockstill, Caleb Pendergraft',
     choices: ['log-in', 'sign-up']
   }
 ];
@@ -16,7 +16,7 @@ const devsInput = [
 const devsPrompt = (socket) =>
   inquirer.prompt(devsInput)
     .then(choice => {
-      switch(choice.devolpers) {
+      switch(choice.developers) {
         case 'log-in' :
           return logInPrompt(socket);
         case 'sign-up': 
