@@ -33,9 +33,9 @@ describe('login signup', () => {
   });
 
 
-  it('handles input for  a user that does not exist', (done) => {
+  it('handles input for  a user that does not exist', async(done) => {
     jest.setTimeout(30000);
-    socket.on('login-unsuccessful', message => {
+    await socket.on('login-unsuccessful', message => {
       expect(message).toEqual('Invalid username or password!');
       done();
     });
@@ -74,9 +74,9 @@ describe('login signup', () => {
     });
   });
 
-  it('can create a user account', (done) => {
+  it('can create a user account', async(done) => {
     jest.setTimeout(30000);
-    socket.on('sign-up-successful', user => {
+    await socket.on('sign-up-successful', user => {
       done();
       expect(user).toEqual({
         username: 'Danny H',
