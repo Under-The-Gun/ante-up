@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 require('dotenv').config();
 const io = require('socket.io-client');
-// const server = require('../lib/app');
 const mongoose = require('mongoose');
 const connect = require('../lib/utils/connect');
 const User = require('../lib/model/User');
@@ -33,7 +32,6 @@ describe('login signup', () => {
     done();
   });
 
-  //Use socket to emit and listen to events on the client side
 
   it('handles input for  a user that does not exist', (done) => {
     socket.on('login-unsuccessful', message => {

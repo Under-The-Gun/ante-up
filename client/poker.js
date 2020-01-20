@@ -1,6 +1,6 @@
+/* eslint-disable no-console */
 #!/usr/bin/env node
 /* eslint-disable no-unused-vars */
-// FRONT END SOCKET 
 const socket = require('socket.io-client')('https://alchemy-ante-up.herokuapp.com/', {
   reconnection: false
 });

@@ -25,7 +25,7 @@ const signUpInput = [
       }
     }
   }
-]
-;
+];
+
 
 module.exports = signUpInput;

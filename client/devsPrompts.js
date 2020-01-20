@@ -7,8 +7,8 @@ const colors = require('colors');
 const devsInput = [
   {
     type: 'list',
-    name: 'devolpers',
-    message: `Developers: Seth Ripman, Matt Munch, Eve Stockstill, Caleb Pendergraft`,
+    name: 'developers',
+    message: 'Developers: Seth Ripman, Matt Munch, Eve Stockstill, Caleb Pendergraft',
     choices: ['log-in', 'sign-up']
   }
 ];

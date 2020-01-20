@@ -25,6 +25,5 @@ const loginInput = [
       }
     }
   }
-]
-    ;
+];
 module.exports = loginInput;

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 const inquirer = require('inquirer');
 const colors = require('colors');
