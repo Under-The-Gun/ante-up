@@ -1,4 +1,4 @@
-const { newDeck, shuffle } = require('../lib/deck/deck');
+const { newDeck } = require('../lib/deck/deck');
 
 describe('deck methods', () => {
   it('can generate a static deck array', () => {

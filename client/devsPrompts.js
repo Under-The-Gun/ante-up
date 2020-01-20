@@ -16,7 +16,7 @@ const devsInput = [
 const devsPrompt = (socket) =>
   inquirer.prompt(devsInput)
     .then(choice => {
-      switch(choice.devolpers) {
+      switch(choice.developers) {
         case 'log-in' :
           return logInPrompt(socket);
         case 'sign-up': 
