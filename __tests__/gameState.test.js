@@ -5,9 +5,9 @@ describe('GameState methods', () => {
     let testGameState = new GameState();
     testGameState.users = { socketIdOne: { username: 'ben' }, socketIdTwo: { username: 'jeff' }, socketIdThree: { username: 'doug' } };
 
-    testGameState.hands = { socketIdTwo: { cardOne: '4s', cardTwo: '5s' }, socketIdThree: { cardOne: '6s', cardTwo: '6h' }, socketIdOne: { cardOne: '2s', cardTwo: '3s' } };
+    testGameState.hands = { socketIdTwo: { cardOne: { code: '4s' }, cardTwo: { code: '5s' } }, socketIdThree: { cardOne: { code: '6s' }, cardTwo: { code: '6h' } }, socketIdOne: { cardOne: { code: '2s' }, cardTwo: { code: '3s' } } };
 
-    testGameState.board = { cardThree: 'Th', cardFour: '3h', cardFive: 'Kh', cardSix: '5h', cardSeven: '6c' };
+    testGameState.board = { cardThree: { code: 'Th' }, cardFour: { code: '3h' }, cardFive: { code: 'Kh' }, cardSix: { code: '5h' }, cardSeven: { code: '6c' } };
 
     const winningHandString = testGameState.solveHands();
     expect(winningHandString).toEqual({ winningHandDescription: 'Flush, Kh High', winningSockets: ['socketIdThree'], winningUserNames: ['doug'] });
@@ -17,9 +17,9 @@ describe('GameState methods', () => {
     let testGameState = new GameState();
     testGameState.users = { socketIdOne: { username: 'ben' }, socketIdTwo: { username: 'jeff' }, socketIdThree: { username: 'doug' } };
 
-    testGameState.hands = { socketIdTwo: { cardOne: '4s', cardTwo: '5s' }, socketIdThree: { cardOne: '6s', cardTwo: '6c' }, socketIdOne: { cardOne: '2s', cardTwo: '3s' } };
+    testGameState.hands = { socketIdTwo: { cardOne: { code: '4s' }, cardTwo: { code: '5s' } }, socketIdThree: { cardOne: { code: '6s' }, cardTwo: { code: '6c' } }, socketIdOne: { cardOne: { code: '2s' }, cardTwo: { code: '3s' } } };
 
-    testGameState.board = { cardThree: 'Th', cardFour: '9h', cardFive: 'Kh', cardSix: '5h', cardSeven: '4h' };
+    testGameState.board = { cardThree: { code: 'Th' }, cardFour: { code: '9h' }, cardFive: { code: 'Kh' }, cardSix: { code: '5h' }, cardSeven: { code: '4h' } };
 
     const winningHandString = testGameState.solveHands();
     expect(winningHandString).toEqual({ winningHandDescription: 'Flush, Kh High', winningSockets: ['socketIdTwo', 'socketIdThree', 'socketIdOne'], winningUserNames: ['jeff', 'doug', 'ben'] });
