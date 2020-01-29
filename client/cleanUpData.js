@@ -4,19 +4,19 @@ const colors = require('colors');
 
 const colorCard = (card) => {
   switch(card.suit) {
-    case 'HEARTS': 
+    case 'HEARTS':
       card.visual = card.visual.map(line => line = line.brightRed.bold);
       break;
 
-    case 'DIAMONDS': 
+    case 'DIAMONDS':
       card.visual = card.visual.map(line => line = line.brightCyan.bold);
       break;
 
-    case 'CLUBS': 
+    case 'CLUBS':
       card.visual = card.visual.map(line => line.brightGreen.bold);
       break;
 
-    case 'SPADES': 
+    case 'SPADES':
       card.visual = card.visual.map(line => line = line.brightYellow.bold);
       break;
   }
